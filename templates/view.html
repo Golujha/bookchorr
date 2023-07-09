@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 30px;">
+            <div class="navbar-nav" style="gap: 30px;">
+                {% for data in generous %}
+                <a class="nav-item nav-link active text-light font-bold"
+                    href="{% url 'generous' data.id %}">{{data.cat_title|capfirst}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 shadow">
+            <div class="card">
+                <img src="{{ show.image.url }}" class="object-fit-cover" style="height: 300px;" alt="">
+                <div class="card-body">
+                    <h4 class="text-black font-bold mt-1 ">BY-{{show.author}}</h4>
+                    <p class="text-black font-bold mt-1">{{show.price}} <del
+                            class="text-danger">{{show.discount_price}}</del></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 mt-3 ">
+            <h4 class="text-black font-bold mt-1 ">{{ show.title }}</h4>
+            <p class="text-black font-bold mt-1">{{ show.description }}</p>
+            <p class=" font-bold mt-1 text-danger">ISBN: {{show.isbn}}</p>
+            <p class="text-black font-bold mt-1">{{show.status}}</p>
+            <button class="btn btn-warning py-3 px-5" type="submit">Buy Now</button>
+            <button class="btn btn-danger py-3 px-5" type="submit">Pay with EMI</button>
+        </div>
+       
+        <div class="col-4 mt-5" style="margin-top: 20px;">
+            <span> <a href="{% url 'delete' show.id %}" class="btn btn-primary px-5 mt-5 py-2" style="margin-top: 50px;"
+                    type="submit">Delete</a>
+            </span>
+            <span> <a href="{% url 'editBooks' show.id %}" class="btn btn-danger px-5 mt-5 py-2"
+                    style="margin-top: 50px;" type="submit">Edit</a>
+            </span>
+            <span> <a href="{% url 'viewBooks' show.id %}" class="btn btn-danger px-2 mt-5 py-2"
+                    style="margin-top: 50px;" type="submit">View Books</a>
+            </span>
+        </div>
+        
+
+    </div>
+</div>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <h1 class="text-center font-bold text-secondary shadow "><u>Related Post</u></h1>
+        {% for data in create %}
+        <div class="col-3 shadow mx-auto mt-5">
+            <div class="card">
+                <img src="{{ data.image.url }}" class="object-fit-cover" style="height: 300px;" alt="">
+                <div class="card-body">
+                    <h4 class="text-black font-bold mt-1 ">BY-{{data.author}}</h4>
+                    <p class="text-black font-bold mt-1">{{data.price}} <del
+                            class="text-danger">{{data.discount_price}}</del></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 mx-auto mt-5">
+            <h4 class="text-black font-bold mt-1 ">{{ data.title }}</h4>
+            <p class="text-black font-bold mt-1">{{ data.description }}</p>
+            <p class="text-danger font-bold mt-1">ISBN: {{data.isbn}}</p>
+            <p class="text-black font-bold mt-1">{{data.status}}</p>
+            <a href="{% url 'generous' data.id %}" class="btn btn-warning px-5 py-3" type="submit">Buy Now</a>
+            <a href="{% url 'generous' data.id %}" class="btn btn-primary px-5 py-3" type="submit">Pay with EMI</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

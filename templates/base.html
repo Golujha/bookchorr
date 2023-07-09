@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
+        <div class="container">
+            <div class="navbar-brand"><img
+                    src="https://www.bookchor.com/assets/frontend/layout/img/logos/book-chor-logo-256.png" width="160px"
+                    alt="">
+            </div>
+
+        </div>
+        <form action="{% url 'search' %}" method="get" style="width: 1000px;margin-right: 150px;">
+            <div class="input-group " >
+                <input type="search" class="form-control rounded" placeholder="Search Book Here" name="search" />
+                <button type="button" class="btn btn-outline-dark">search</button>
+            </div>
+        </form>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 30px;">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active text-light font-bold" href="{% url 'homepage' %}" style="margin-right: 20px;font-size: 20px;">Home</a>
+                {% if user.is_authenticated %}
+                <a class="nav-item nav-link text-light font-bold" href="{% url 'insertpage' %}" style="margin-right: 20px;font-size: 20px;">Insert</a>
+                <a class="nav-item nav-link text-light font-bold" href="{% url 'signOut' %}" style="margin-right: 20px;font-size: 20px;">Logout</a>
+                {% else %}
+                <a class="nav-item nav-link text-light font-bold" href="{% url 'signUp' %}" style="margin-right: 20px;font-size: 20px;">Register</a>
+                <a class="nav-item nav-link text-light font-bold" href="{% url 'signIn' %}" style="margin-right: 20px;font-size: 20px;">Login</a>
+                {% endif %}
+                
+
+            </div>
+        </div>
+
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+
+    {% block content %}{% endblock %}
+
+
+
+
+</body>
+
+</html>
+
