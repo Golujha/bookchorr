@@ -38,7 +38,7 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="https://bc-img.s3.ap-south-1.amazonaws.com/web_banners/2023040739523.webp" class="d-block w-100"
-                alt="...">
+                alt="">
         </div>
         <div class="carousel-item">
             <img src="https://bc-img.s3.ap-south-1.amazonaws.com/web_banners/2023032790785.webp" class="d-block w-100"
@@ -46,19 +46,19 @@
         </div>
         <div class="carousel-item">
             <img src="https://bc-img.s3.ap-south-1.amazonaws.com/web_banners/2023060555036.png" class="d-block w-100"
-                alt="...">
+                alt="">
         </div>
         <div class="carousel-item">
             <img src="https://bc-img.s3.ap-south-1.amazonaws.com/web_banners/202306201032.jpeg" class="d-block w-100"
                 alt="">
         </div>
     </div>
-    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators"
+    <button class="carousel-control-prev  " type="button" data-bs-target="#carouselExampleIndicators"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon " aria-hidden="true"></span>
         <span class="visually-hidden  font-bold" style="font-size: 150px;">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+    <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators"
         data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden font-bold">Next</span>
@@ -73,8 +73,8 @@
                 <img src="{{data.image.url}}" class="object-fit-cover" style="height: 300px;" alt="">
             </div>
             <div class="card-body">
-                <h4 class="text-black font-bold mt-1 text-center">{{data.title}}</h4>
-                <p class="text-black font-bold mt-1">BY-{{data.author}}</p>
+                <h4 class="text-black font-bold mt-1 text-center">{{data.title|capfirst}}</h4>
+                <p class="text-black font-bold mt-1">BY-{{data.author|capfirst}}</p>
                 <p class="text-black font-bold mt-1">{{data.price}} <del
                         class="text-danger font-bold">{{data.discount_price}}</del></p>
                 <a href="{% url 'singlePost' data.id %}" class="btn btn-warning px-4 py-2" type="submit">Buy Now</a>

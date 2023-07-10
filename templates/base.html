@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
         <div class="container">
             <div class="navbar-brand"><img
                     src="https://www.bookchor.com/assets/frontend/layout/img/logos/book-chor-logo-256.png" width="160px"
@@ -21,13 +21,13 @@
         </div>
         <form action="{% url 'search' %}" method="get" style="width: 1000px;margin-right: 150px;">
             <div class="input-group " >
-                <input type="search" class="form-control rounded" placeholder="Search Book Here" name="search" />
-                <button type="button" class="btn btn-outline-dark">search</button>
+                <input type="search" class="form-control rounded" placeholder="Search Book Here" name="search"/>
+                <button type="button" class="btn btn-outline-light">search</button>
             </div>
         </form>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 30px;">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active text-light font-bold" href="{% url 'homepage' %}" style="margin-right: 20px;font-size: 20px;">Home</a>
+                <a class="nav-item nav-link active textltext-lightk font-bold" href="{% url 'homepage' %}" style="margin-right: 20px;font-size: 20px;">Home</a>
                 {% if user.is_authenticated %}
                 <a class="nav-item nav-link text-light font-bold" href="{% url 'insertpage' %}" style="margin-right: 20px;font-size: 20px;">Insert</a>
                 <a class="nav-item nav-link text-light font-bold" href="{% url 'signOut' %}" style="margin-right: 20px;font-size: 20px;">Logout</a>
@@ -45,6 +45,125 @@
 
 
     {% block content %}{% endblock %}
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light mt-4 text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 link-secondary text-black">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3 text-secondary"></i>Book List
+            </h6>
+            <p>
+             my first website django Bookchorr
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Type of books
+            </h6>
+            <p>
+              <a href="#!" class="text-reset text-black font-bold">BCA BOOK</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset text-black font-bold">MCA BOOK</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset text-black font-bold">BBA</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset text-black font-bold">Laravel</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Types
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Buy Now</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3 text-secondary"></i> Araria (jaynagar,wardno 05) </p>
+            <p>
+              <i class="fas fa-envelope me-3 text-secondary"></i>
+              Gkumarjha304@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3 text-secondary"></i> + 91 6207002686</p>
+            <p><i class="fas fa-print me-3 text-secondary"></i> + 91 6207002686</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+      <a class="text-reset fw-bold" href="">Golu jha</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
 
 
 
